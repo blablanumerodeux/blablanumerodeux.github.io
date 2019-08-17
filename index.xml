@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Minimal</title>
-    <link>http://blablanumerodeux.github.io/</link>
+    <link>https://blablanumerodeux.github.io/</link>
     <description>Recent content on Minimal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://blablanumerodeux.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blablanumerodeux.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
