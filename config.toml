@@ -1,14 +1,14 @@
-baseURL = "http://blablanumerodeux.github.io"
+baseURL = "https://blablanumerodeux.github.io"
 languageCode = "en-us"
-title = "Minimal"
+title = "Damien LAMBLA"
 theme = "minimal"
 #disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = ""
 
 [params]
-    author = "Calin Tataru"
-    description = "Personal blog theme powered by Hugo"
-    githubUsername = "#"
+    author = "Damien LAMBLA"
+    description = "Personal page"
+    githubUsername = "blablanumerodeux"
     accent = "red"
     showBorder = true
     backgroundColor = "white"
@@ -37,26 +37,29 @@ googleAnalytics = ""
 # The list of available icons can be found at http://fontawesome.io/icons/
 
 [[menu.icon]]
-    url = "mailto:me@example.com"
+    url = "mailto:damien.lambla@gmail.com"
     name = "envelope-o"
     weight = 1
 
 [[menu.icon]]
-    url = "https://github.com/username/"
+    url = "https://github.com/blablanumerodeux/"
     name = "github"
     weight = 2
 
-[[menu.icon]]
-    url = "https://twitter.com/username/"
-    name = "twitter"
-    weight = 3
+#[[menu.icon]]
+#    url = "https://twitter.com/username/"
+#    name = "twitter"
+#    weight = 3
 
 [[menu.icon]]
-    url = "https://www.linkedin.com/in/username/"
+    url = "https://www.linkedin.com/in/damien-lambla-27976194/"
     name = "linkedin"
     weight = 4
 
 [[menu.icon]]
-    url = "https://www.stackoverflow.com/username/"
+    url = "https://www.stackoverflow.com/users/4145846/dreaser"
     name = "stack-overflow"
     weight = 5
+
+
+
