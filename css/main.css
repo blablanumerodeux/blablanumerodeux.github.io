@@ -13,7 +13,7 @@ main {
     margin: auto;
     padding: 25px;
     flex: 1 0 auto;
-    max-width: 750px;
+    #max-width: 750px;
 }
 
 /*footer*/
@@ -30,7 +30,7 @@ main {
 
 .intro > h1 {
     color: #212121;
-    font-size: 12vh;
+    font-size: 10vh;
 }
 
 .intro > h2 {
