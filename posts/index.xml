@@ -12,12 +12,16 @@
     
     
     <item>
-      <title>My First Post</title>
+      <title>Some of my projects</title>
       <link>https://blablanumerodeux.github.io/posts/my-first-post/</link>
       <pubDate>Sat, 17 Aug 2019 20:53:32 -0400</pubDate>
       
       <guid>https://blablanumerodeux.github.io/posts/my-first-post/</guid>
-      <description>test</description>
+      <description>https://lambla.eu/static-laverna/
+https://webdav.lambla.eu/webdav/
+http://home.lambla.eu/
+http://dakar.lambla.eu/
+https://homeless.lambla.eu:9090/swagger-ui.html#/</description>
     </item>
     
   </channel>
