@@ -12,6 +12,19 @@
     
     
     <item>
+      <title>Secrets and properties management</title>
+      <link>https://blablanumerodeux.github.io/posts/properties-files-and-secrets-managers/</link>
+      <pubDate>Sat, 17 Aug 2019 20:53:32 -0400</pubDate>
+      
+      <guid>https://blablanumerodeux.github.io/posts/properties-files-and-secrets-managers/</guid>
+      <description>Secrets and properties management Properties files with Spring boot Specify different profiles (for the different DB for example) like this in the default application.properties file:
+spring.profiles.active=local  or at runtime like that:
+java -Dspring.profiles.active=local -jar yourApplication.jar  It will automatically take the corresponding properties file in the classpath application-local.propertie
+Secrets with Spring boot When you have to specify a secret, just define a placeholder instead:
+spring.datasource.password=${db-password}  and pass the value at runtime with a Java -D variable:</description>
+    </item>
+    
+    <item>
       <title>Some of my projects</title>
       <link>https://blablanumerodeux.github.io/posts/my-first-post/</link>
       <pubDate>Sat, 17 Aug 2019 20:53:32 -0400</pubDate>
