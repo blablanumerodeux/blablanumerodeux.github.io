@@ -10,9 +10,9 @@ jobs:
       - run:
           name: Print
           command: |
-            ls -la
             cd ..
-            mv blablanumerodeux.github.io.git me
+            ls -la
+            mv blablanumerodeux.github.io me
             git clone git@github.com:blablanumerodeux/blablanumerodeux.github.io.git
             ls -la
             cd me
