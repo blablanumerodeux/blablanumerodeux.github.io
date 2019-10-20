@@ -7,6 +7,9 @@ jobs:
     steps:
       - checkout
 
+      - add_ssh_keys:
+          fingerprints:
+            - "32:e4:94:57:e8:e3:04:a1:65:a7:a7:49:a7:e2:e8:56"
       - run:
           name: Print
           command: |
@@ -23,6 +26,20 @@ jobs:
             git add -A
             git status
             git diff --cached
+
             git commit -m 'circleci commiting'
 
+
+workflows:
+  version: 2
+
+  deploy:
+    jobs:
+      - hold:
+          type: approval
+      - build:
+          filters:
+            branches:
+              only:
+                - hugo
 
