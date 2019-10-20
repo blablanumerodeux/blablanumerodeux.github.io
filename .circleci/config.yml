@@ -1,17 +1,13 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: debian:stretch
-
     steps:
       - checkout
-
       - run:
           name: Print
           command: |
             ls -la
-            git clone git@github.com:blablanumerodeux/blablanumerodeux.github.io.git
+            cd ..
             mv blablanumerodeux.github.io.git me
             git clone git@github.com:blablanumerodeux/blablanumerodeux.github.io.git
             ls -la
