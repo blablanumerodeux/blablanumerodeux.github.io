@@ -5,11 +5,13 @@
   <url>
     <loc>https://blablanumerodeux.github.io/</loc>
     <lastmod>2019-08-17T20:53:32-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blablanumerodeux.github.io/posts/</loc>
     <lastmod>2019-08-17T20:53:32-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -24,10 +26,12 @@
   
   <url>
     <loc>https://blablanumerodeux.github.io/categories/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blablanumerodeux.github.io/tags/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>
