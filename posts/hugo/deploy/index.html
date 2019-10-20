@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Posts</title>
+        <title>HUGO</title>
         
         <style>
 
@@ -61,9 +61,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.55.0" />
         
-        <link href="/posts/index.xml" rel="alternate" type="application/rss&#43;xml" title="Damien LAMBLA" />
-        <link href="/posts/index.xml" rel="feed" type="application/rss&#43;xml" title="Damien LAMBLA" />
-        
 
         
 
@@ -83,7 +80,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Posts</a>
+                    <a class="navbar-brand visible-xs" href="#">HUGO</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -128,9 +125,7 @@
 
 <main>
 
-    <h2>Posts</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -144,39 +139,86 @@
     
 
 </div>
-  <div class="item">
 
-    
-    
-    
 
-    
-    
+    <br> <div class="text-justify">
 
-    <h4><a href="/posts/properties-files-and-secrets-managers/">Secrets and properties management</a></h4>
-    <h5>August 17, 2019</h5>
-    
+<h2 id="hugo">HUGO</h2>
 
+<h3 id="create-a-new-site">create a new site</h3>
+
+<p><code>hugo new site me</code></p>
+
+<h3 id="install-theme">install theme</h3>
+
+<p>go here <a href="https://themes.gohugo.io/minimal/">minimal</a>  and follow the instructions:</p>
+
+<pre><code>git submodule add https://github.com/calintat/minimal.git themes/minimal
+git submodule init
+git submodule update
+git submodule update --remote themes/minimal
+cp themes/minimal/exampleSite/config.toml 
+</code></pre>
+
+<p>in the file config.toml set all your params, and:</p>
+
+<pre><code>baseurl = &quot;http://examplesite&quot; &lt;- Change to https://yourgithubusername.github.io
+</code></pre>
+
+<h3 id="push-on-your-github">push on your github</h3>
+
+<p>On branch <em>master</em> you have the public folder (built version)<br />
+And on the <em>hugo</em> branch you put the hugo project</p>
+
+<p>Checkout the hugo branch</p>
+
+<p><code>hugo serve</code> -&gt; to test localy<br />
+<code>hugo -d ../blablanumerodeux.github.io/</code> -&gt; to build the static version in the folder blablanumerodeux.github.io</p>
+
+<p>blablanumerodeux.github.io folder is used to push the public folder (wich contains the static version of the website) without the hugo files (we could have make 2 different repos and a submodule)</p>
+
+<p><code>git push origin master -u</code>
+<code>git push origin hugo -u</code></p>
+
+<h3 id="some-good-themes">some good themes:</h3>
+
+<p><a href="https://themes.gohugo.io/hugo-coder/">https://themes.gohugo.io/hugo-coder/</a>
+<a href="https://themes.gohugo.io/minimal/">https://themes.gohugo.io/minimal/</a></p>
+
+<h3 id="sources">sources:</h3>
+
+<p><a href="https://dev.to/michalbryxi/simplify-pushing-to-git-32g6">https://dev.to/michalbryxi/simplify-pushing-to-git-32g6</a>
+<a href="https://dev.to/dgavlock/creating-a-hugo-site-on-github-pages-3cjo">https://dev.to/dgavlock/creating-a-hugo-site-on-github-pages-3cjo</a>
+<a href="https://themes.gohugo.io/minimal/">https://themes.gohugo.io/minimal/</a>
+<a href="https://github.com/calintat/minimal/">https://github.com/calintat/minimal/</a>
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a>
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain">https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain</a>
+<a href="https://themes.gohugo.io//theme/minimal/post/">https://themes.gohugo.io//theme/minimal/post/</a></p>
+
+<p><a href="https://support.circleci.com/hc/en-us/articles/360018860473-How-to-push-a-commit-back-to-the-same-repository-as-part-of-the-CircleCI-job">circleci git</a></p>
+
+<p><a href="https://circleci.com/docs/2.0/gh-bb-integration/#creating-a-github-deploy-key">circleci ssh key</a></p>
+
+<p><a href="https://hub.docker.com/r/jguyomard/hugo-builder/">hugo docker image</a></p>
+
+<h3 id="inspiration">inspiration</h3>
+
+<p><a href="https://tomlicha.github.io/">https://tomlicha.github.io/</a>
+<a href="https://github.com/tomlicha/tomlicha.github.io">https://github.com/tomlicha/tomlicha.github.io</a></p>
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEwOTIzNDM4MDJdfQ==
+-->
 </div>
-  <div class="item">
-
-    
-    
-    
 
     
     
 
-    <h4><a href="/posts/my-first-post/">Some of my projects</a></h4>
-    <h5>August 17, 2019</h5>
     
 
-</div>
- 
+    
 
 </main>
-
-
 
         <footer>
 
