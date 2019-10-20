@@ -15,3 +15,5 @@ jobs:
             mv blablanumerodeux.github.io.git me
             git clone git@github.com:blablanumerodeux/blablanumerodeux.github.io.git
             ls -la
+            cd me
+            hugo -d ../blablanumerodeux.github.io
