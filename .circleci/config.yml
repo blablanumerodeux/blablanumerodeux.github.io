@@ -18,3 +18,8 @@ jobs:
             cd me
             git checkout hugo
             hugo -d ../blablanumerodeux.github.io
+            git status
+            git add -A
+            cd ../blablanumerodeux.github.io
+            ls -la
+            git commit -m 'circleci commiting'
