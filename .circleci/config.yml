@@ -22,7 +22,7 @@ jobs:
             cd ../blablanumerodeux.github.io
             git add -A
             git status
-            ls -la
+            git diff --cached
             git commit -m 'circleci commiting'
 
 
