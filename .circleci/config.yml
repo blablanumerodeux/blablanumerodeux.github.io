@@ -12,8 +12,9 @@ jobs:
           command: |
             cd ..
             ls -la
-            mv blablanumerodeux.github.io me
+            mv project me
             git clone git@github.com:blablanumerodeux/blablanumerodeux.github.io.git
             ls -la
             cd me
+            git checkout hugo
             hugo -d ../blablanumerodeux.github.io
