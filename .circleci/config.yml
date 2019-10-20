@@ -16,13 +16,12 @@ jobs:
             cd me
             git checkout hugo
             git submodule update --init --recursive
-            ls -la themes/minimal
             hugo -d ../blablanumerodeux.github.io
             git config --global user.email "circleci@blablanumerodeux.com"
             git config --global user.name "CircleCi Job"
+            cd ../blablanumerodeux.github.io
             git add -A
             git status
-            cd ../blablanumerodeux.github.io
             ls -la
             git commit -m 'circleci commiting'
 
