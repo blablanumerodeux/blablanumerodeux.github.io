@@ -11,15 +11,12 @@ jobs:
           name: Print
           command: |
             cd ..
-            ls -la
             mv project me
             git clone git@github.com:blablanumerodeux/blablanumerodeux.github.io.git
             cd me
             git checkout hugo
-            cd themes/minimal
-            git pull
-            ls -la
-            cd ../../
+            git submodule update --recursive --remote
+            ls -la themes/minimal
             hugo -d ../blablanumerodeux.github.io
             git config --global user.email "circleci@blablanumerodeux.com"
             git config --global user.name "CircleCi Job"
