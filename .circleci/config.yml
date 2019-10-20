@@ -14,12 +14,16 @@ jobs:
             ls -la
             mv project me
             git clone git@github.com:blablanumerodeux/blablanumerodeux.github.io.git
-            ls -la
             cd me
             git checkout hugo
+            ls -la themes/minimal
             hugo -d ../blablanumerodeux.github.io
+            git config --global user.email "circleci@blablanumerodeux.com"
+            git config --global user.name "CircleCi Job"
             git status
             git add -A
             cd ../blablanumerodeux.github.io
             ls -la
             git commit -m 'circleci commiting'
+
+
