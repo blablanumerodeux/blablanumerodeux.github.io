@@ -1,4 +1,11 @@
 
+---
+title: "Secrets and properties management"
+date: 2019-08-17T20:53:32-04:00
+draft: false
+---
+
+# Secrets and properties management
 
 ## Properties files with Spring boot
 
