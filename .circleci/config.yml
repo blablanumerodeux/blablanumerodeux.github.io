@@ -25,9 +25,8 @@ jobs:
             cd ../blablanumerodeux.github.io
             git add -A
             git status
-            git diff --cached
-
             git commit -m 'circleci commiting'
+            git push
 
 
 workflows:
