@@ -1,6 +1,6 @@
 ---
 title: "HUGO"
-date: 2019-08-17T20:53:32-04:00
+date: 2019-10-17T20:53:32-04:00
 draft: false
 ---
 
@@ -70,5 +70,5 @@ https://github.com/tomlicha/tomlicha.github.io
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTIzNDM4MDJdfQ==
+eyJoaXN0b3J5IjpbLTkzMzk0NjU5LC0xMDkyMzQzODAyXX0=
 -->
