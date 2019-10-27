@@ -27,7 +27,7 @@ And on the hugo branch you put the hugo project</description>
     <item>
       <title>Secrets and properties management</title>
       <link>https://blablanumerodeux.github.io/posts/properties-files-and-secrets-managers/</link>
-      <pubDate>Sat, 17 Aug 2019 20:53:32 -0400</pubDate>
+      <pubDate>Thu, 17 Oct 2019 20:53:32 -0400</pubDate>
       
       <guid>https://blablanumerodeux.github.io/posts/properties-files-and-secrets-managers/</guid>
       <description>Secrets and properties management Properties files with Spring boot Specify different profiles (for the different DB for example) like this in the default application.properties file:
