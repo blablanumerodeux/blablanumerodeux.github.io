@@ -1,6 +1,6 @@
 ---
 title: "Secrets and properties management"
-date: 2019-08-17T20:53:32-04:00
+date: 2019-10-17T20:53:32-04:00
 draft: false
 ---
 
@@ -125,5 +125,6 @@ Another solution to avoid all these variables transmissions is to use Vault.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY0NjY5ODE3LDg3MzkwNzE0N119
+eyJoaXN0b3J5IjpbMTYxNTMxOTg4OCw0NjQ2Njk4MTcsODczOT
+A3MTQ3XX0=
 -->
