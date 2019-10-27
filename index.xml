@@ -6,7 +6,7 @@
     <description>Recent content on Damien LAMBLA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Aug 2019 20:53:32 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 17 Oct 2019 20:53:32 -0400</lastBuildDate>
     
 	<atom:link href="https://blablanumerodeux.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>HUGO</title>
       <link>https://blablanumerodeux.github.io/posts/hugo/deploy/</link>
-      <pubDate>Sat, 17 Aug 2019 20:53:32 -0400</pubDate>
+      <pubDate>Thu, 17 Oct 2019 20:53:32 -0400</pubDate>
       
       <guid>https://blablanumerodeux.github.io/posts/hugo/deploy/</guid>
       <description>HUGO create a new site hugo new site me
