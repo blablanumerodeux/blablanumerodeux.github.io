@@ -52,6 +52,7 @@ ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=${PROFILE}", "/app.jar"]
 
 `${JAR_FILE}` is referencing an argument passed within the docker build command (launched from **docker-compose** or **maven**). This variable is not used anymore after the build is done.
 
+[more info on the env variables here](https://vsupalov.com/docker-arg-env-variable-guide/#the-dot-env-file-env)
 
 ### Docker-compose
 
@@ -125,6 +126,6 @@ Another solution to avoid all these variables transmissions is to use Vault.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxNTMxOTg4OCw0NjQ2Njk4MTcsODczOT
+eyJoaXN0b3J5IjpbLTU5MjY2OTQ2Niw0NjQ2Njk4MTcsODczOT
 A3MTQ3XX0=
 -->
