@@ -220,6 +220,19 @@ JAR_FILE=target/dakar-0.0.3.jar
 <p>NB: <em>Please note that the JAR_FILE could (and should) be put directly in the args section.
 No need for such an environment variable just for the build time, it&rsquo;s here just to demonstrate how we can use env variables within the docker-compose file.</em></p>
 
+<p>Another way to do the same thing is like this:</p>
+
+<pre><code>  app:  
+    image: &quot;danslarue/homeless:latest&quot;  
+  build: .  
+    ports:  
+      - &quot;9090:8080&quot;  
+  container_name: 'app-homeless'  
+  environment:  
+      - db-password=F5OIWZbXrLCKGLCJJ9CJkkJdE59aLZI-  
+#      - db-password=example
+</code></pre>
+
 <h2 id="maven">Maven</h2>
 
 <p>Here is the config for the docker plugin:</p>
@@ -260,8 +273,8 @@ No need for such an environment variable just for the build time, it&rsquo;s her
 <p>Another solution to avoid all these variables transmissions is to use Vault.</p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5MjY2OTQ2Niw0NjQ2Njk4MTcsODczOT
-A3MTQ3XX0=
+eyJoaXN0b3J5IjpbMjA4ODc1Nzc5MywtNTkyNjY5NDY2LDQ2ND
+Y2OTgxNyw4NzM5MDcxNDddfQ==
 -->
 </div>
 
