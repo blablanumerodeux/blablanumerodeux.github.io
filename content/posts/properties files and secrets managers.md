@@ -93,6 +93,7 @@ No need for such an environment variable just for the build time, it's here just
   environment:  
     - db-password=example
 ```
+Note the *environment* part
 
 
 ## Maven
@@ -138,6 +139,6 @@ Another solution to avoid all these variables transmissions is to use Vault.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDQxMjAzMCwtNTkyNjY5NDY2LDQ2ND
-Y2OTgxNyw4NzM5MDcxNDddfQ==
+eyJoaXN0b3J5IjpbLTg5OTEwMDExOSwtMTQwNDEyMDMwLC01OT
+I2Njk0NjYsNDY0NjY5ODE3LDg3MzkwNzE0N119
 -->
