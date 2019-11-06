@@ -83,16 +83,15 @@ NB: *Please note that the JAR_FILE could (and should) be put directly in the arg
 No need for such an environment variable just for the build time, it's here just to demonstrate how we can use env variables within the docker-compose file.*
  
  Another way to do the same thing is like this:
-```
+```docker
   app:  
     image: "danslarue/homeless:latest"  
   build: .  
-    ports:  
-      - "9090:8080"  
+  ports:  
+    - "9090:8080"  
   container_name: 'app-homeless'  
   environment:  
-      - db-password=F5OIWZbXrLCKGLCJJ9CJkkJdE59aLZI-  
-#      - db-password=example
+    - db-password=example
 ```
 
 
@@ -139,6 +138,6 @@ Another solution to avoid all these variables transmissions is to use Vault.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4ODc1Nzc5MywtNTkyNjY5NDY2LDQ2ND
+eyJoaXN0b3J5IjpbLTE0MDQxMjAzMCwtNTkyNjY5NDY2LDQ2ND
 Y2OTgxNyw4NzM5MDcxNDddfQ==
 -->
