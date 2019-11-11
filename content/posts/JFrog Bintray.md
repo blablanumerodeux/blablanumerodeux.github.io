@@ -132,8 +132,15 @@ To do that you can configure your maven build with the `<resources>` tag like th
 
 ```
 
+## Glossary
 
+ - OJO: 
+ - OSS 
+ - BinTray 
+ -  JCenter: a
+ - Maven Central 
+ - Artifactory
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjkxMDY2NjNdfQ==
+eyJoaXN0b3J5IjpbMTYwMDQ4MzUxMywyOTEwNjY2M119
 -->
