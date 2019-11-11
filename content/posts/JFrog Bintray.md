@@ -139,8 +139,9 @@ To do that you can configure your maven build with the `<resources>` tag like th
  - BinTray: Website used to manage users, organisations, repos,packages,versions,and promot versions to JCenter and Maven Central
  -  JCenter: One of the public repo where you can host freely your open source software
  - Maven Central: The most famous public repo to host freely your open source software
- - Artifactory: 
+ - Artifactory: One of the 3 main repository management tool (Sonartype Nexus, JFrog Artifactory, and NPM)
+ - 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjY2NzcwOTksMjkxMDY2NjNdfQ==
+eyJoaXN0b3J5IjpbODU1MTkyNzYyLDI5MTA2NjYzXX0=
 -->
