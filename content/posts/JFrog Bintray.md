@@ -134,13 +134,13 @@ To do that you can configure your maven build with the `<resources>` tag like th
 
 ## Glossary
 
- - OJO: 
- - OSS 
- - BinTray 
- -  JCenter: a
+ - OJO: Oss.Jfrog.Org
+ - OSS: 
+ - BinTray: Website used to manage users, organisations, repos,packages,versions,and promot versions to JCenter and Maven Central
+ -  JCenter: One of the many public repo that h
  - Maven Central 
  - Artifactory
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwMDQ4MzUxMywyOTEwNjY2M119
+eyJoaXN0b3J5IjpbMjExMTk5MTc0NCwyOTEwNjY2M119
 -->
