@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Damien LAMBLA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Oct 2019 20:53:32 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 10 Nov 2019 20:53:32 -0400</lastBuildDate>
     
 	<atom:link href="https://blablanumerodeux.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Maven deploy to OSS JFrog to Maven Central</title>
+      <link>https://blablanumerodeux.github.io/posts/jfrog-bintray/</link>
+      <pubDate>Sun, 10 Nov 2019 20:53:32 -0400</pubDate>
+      
+      <guid>https://blablanumerodeux.github.io/posts/jfrog-bintray/</guid>
+      <description>Maven deploy to OSS JFrog to Maven Central JFrog BinTray Begin by creating an organisation and a package on JFrog BinTray.
+Edit your package and request that your package be added to JCenter
+Don&amp;rsquo;t forgot to tick the option : Host my snapshot build artifacts on the OSS Artifactory Wait for your request to be granted.
+Then, Edit your profile and find your API key.
+OSS JFrog Use that key as your password to connect in OSS-JFrog.</description>
+    </item>
     
     <item>
       <title>HUGO</title>
