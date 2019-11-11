@@ -137,10 +137,10 @@ To do that you can configure your maven build with the `<resources>` tag like th
  - OJO: Oss.Jfrog.Org
  - OSS: 
  - BinTray: Website used to manage users, organisations, repos,packages,versions,and promot versions to JCenter and Maven Central
- -  JCenter: One of the many public repo that h
- - Maven Central 
- - Artifactory
+ -  JCenter: One of the public repo where you can host freely your open source software
+ - Maven Central: The most famous public repo to host freely your open source software
+ - Artifactory: 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMTk5MTc0NCwyOTEwNjY2M119
+eyJoaXN0b3J5IjpbLTE4MjY2NzcwOTksMjkxMDY2NjNdfQ==
 -->
