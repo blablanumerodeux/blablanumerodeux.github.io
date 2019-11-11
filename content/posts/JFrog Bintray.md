@@ -135,7 +135,7 @@ To do that you can configure your maven build with the `<resources>` tag like th
 ## Glossary
 
  - OJO: Oss.Jfrog.Org
- - OSS: 
+ - OSS: Open Source Solutions from JFrog
  - BinTray: Website used to manage users, organisations, repos,packages,versions,and promot versions to JCenter and Maven Central
  -  JCenter: One of the public repo where you can host freely your open source software
  - Maven Central: The most famous public repo to host freely your open source software
@@ -143,5 +143,6 @@ To do that you can configure your maven build with the `<resources>` tag like th
  - 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU1MTkyNzYyLDI5MTA2NjYzXX0=
+eyJoaXN0b3J5IjpbMTkxMTQyMTUxMSw4NTUxOTI3NjIsMjkxMD
+Y2NjNdfQ==
 -->
