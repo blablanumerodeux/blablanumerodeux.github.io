@@ -43,7 +43,7 @@ A list of various available services will be displayed to the homeless people al
 Project made with Spring Boot 1 (No Webflux), Swagger, ReactJs, PostgresQL, Maven, CircleCI, and Docker. 
   
   
-See project backend: [https://homeless.project.lambla.eu/swagger-ui.html#/](https://homeless.lambla.eu:9090/swagger-ui.html#/)  
+See project backend: [https://homeless.project.lambla.eu/swagger-ui.html#/](https://homeless.lambla.eu/swagger-ui.html#/)  
 
   
   
@@ -80,5 +80,5 @@ See project: [http://dakar.project.lambla.eu/](http://dakar.lambla.eu/)
 eyJoaXN0b3J5IjpbLTUyMTY3ODY2OF19  
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTU3MDE3NTMsLTUyMTY3ODY2OF19
+eyJoaXN0b3J5IjpbLTE4NTAzMjQxODcsLTUyMTY3ODY2OF19
 -->
