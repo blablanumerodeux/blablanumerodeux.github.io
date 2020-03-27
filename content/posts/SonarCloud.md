@@ -28,6 +28,9 @@ use this maven command only if you're the only dev in the team, otherwise you ma
 ```bash
 mvnw verify sonar:sonar -DskipTests -f pom.xml
 ```
+
+## CircleCi 
+
 otherwise use circleci and set your token within an env variable called :
 SONAR_TOKEN
 
@@ -106,5 +109,5 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyOTkwMjk5NSwtMjA4ODI2OF19
+eyJoaXN0b3J5IjpbLTQ3MzIxMTk1NSwtMjA4ODI2OF19
 -->
