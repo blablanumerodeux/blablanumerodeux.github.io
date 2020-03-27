@@ -25,7 +25,8 @@ In the pom.xml add:
 
 ```
 
-use this maven command only if you're the only dev in the team, otherwise you may override the scan of others:
+use this maven command only if you're the only dev in the team, otherwise you may override the scan of others:  
+
 ```bash
 mvnw verify sonar:sonar -DskipTests -f pom.xml
 ```
@@ -67,7 +68,8 @@ workflows:
 ## More doc on how the sonar maven plugin works
 
 https://stackoverflow.com/questions/14979530/why-does-the-maven-command-mvn-sonarsonar-work-without-any-plugin-configurati
-
+  
+  
 https://blog.sonarsource.com/we-had-a-dream-mvn-sonarsonar/
 
 
@@ -109,6 +111,6 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQxNzUzOTUsLTg1MTc0OTQ0MywyMDMxMz
-E2OTk1LDk0OTYzMzk2NSwtMjA4ODI2OF19
+eyJoaXN0b3J5IjpbMTk4MTExMDU2MywtODUxNzQ5NDQzLDIwMz
+EzMTY5OTUsOTQ5NjMzOTY1LC0yMDg4MjY4XX0=
 -->
