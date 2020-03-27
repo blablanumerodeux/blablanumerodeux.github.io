@@ -1,4 +1,13 @@
-# SonarCloud
+---
+title: "Secrets and properties management"
+date: 2019-10-17T20:53:32-04:00
+draft: false
+---
+
+# SonarCloud integration
+
+This article as a reminder on how to integrate your project into SonarCloud.
+
 https://sonarcloud.io/projects
 
 
@@ -95,5 +104,5 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODgyNjhdfQ==
+eyJoaXN0b3J5IjpbLTYyMzM3MzU0OSwtMjA4ODI2OF19
 -->
