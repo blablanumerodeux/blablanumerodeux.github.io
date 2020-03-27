@@ -47,7 +47,7 @@ And on the hugo branch you put the hugo project</description>
 https://sonarcloud.io/projects
 Maven In the pom.xml add:
 &amp;lt;properties&amp;gt; &amp;lt;sonar.projectKey&amp;gt;blablanumerodeux_kayak&amp;lt;/sonar.projectKey&amp;gt; &amp;lt;sonar.organization&amp;gt;blablanumerodeux&amp;lt;/sonar.organization&amp;gt; &amp;lt;sonar.host.url&amp;gt;https://sonarcloud.io&amp;lt;/sonar.host.url&amp;gt; &amp;lt;!-- this should not be committed--&amp;gt; &amp;lt;sonar.login&amp;gt;d0d909736d1c196a530e6f3f26e62bee1a81cd7f&amp;lt;/sonar.login&amp;gt; &amp;lt;/properties&amp;gt;  use this maven command only if you&amp;rsquo;re the only dev in the team, otherwise you may override the scan of others:
-mvnw verify sonar:sonar -DskipTests -f pom.xml  CircleCi Otherwise use circleci and set your token within an env variable called : SONAR_TOKEN</description>
+mvnw verify sonar:sonar -DskipTests -f pom.xml  CircleCi If you&amp;rsquo;re not alon on your project, then set your token within an environment variable called : SONAR_TOKEN</description>
     </item>
     
     <item>
