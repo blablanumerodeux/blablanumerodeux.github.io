@@ -31,15 +31,14 @@ mvnw verify sonar:sonar -DskipTests -f pom.xml
 
 ## CircleCi 
 
-Otherwise use circleci and set your token within an env variable called :
-SONAR_TOKEN
+If you're not alon on your project, then set your token within an environment variable called :
+**SONAR_TOKEN**
 
 https://www.baeldung.com/sonar-qube
-
+  
 https://docs.sonarqube.org/latest/analysis/gitlab-cicd/
 
-
-Also SONAR_HOST_URL can also be set as a env var 
+Also **SONAR_HOST_URL** can also be set as an environment variable. 
 
 Finally, here is an example of maven command that you can use within your circleci config file 
 
@@ -109,5 +108,6 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ5NjMzOTY1LC0yMDg4MjY4XX0=
+eyJoaXN0b3J5IjpbLTEyOTE5ODgzODcsOTQ5NjMzOTY1LC0yMD
+g4MjY4XX0=
 -->
