@@ -35,6 +35,11 @@
   </url>
   
   <url>
+    <loc>https://blablanumerodeux.github.io/posts/sonarcloud/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blablanumerodeux.github.io/categories/</loc>
     <priority>0</priority>
   </url>
