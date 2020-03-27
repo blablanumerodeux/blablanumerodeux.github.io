@@ -1,6 +1,6 @@
 ---
 title: "SonarCloud"
-date: 2019-10-17T20:53:32-04:00
+date: 2020-03-26T20:53:32-04:00
 draft: false
 ---
 
@@ -108,6 +108,6 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU1Mjg3MTQ3LC04NTE3NDk0NDMsMjAzMT
-MxNjk5NSw5NDk2MzM5NjUsLTIwODgyNjhdfQ==
+eyJoaXN0b3J5IjpbLTIwNTc4NjQwMDUsLTg1MTc0OTQ0MywyMD
+MxMzE2OTk1LDk0OTYzMzk2NSwtMjA4ODI2OF19
 -->
