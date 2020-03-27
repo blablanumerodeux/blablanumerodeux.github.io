@@ -31,7 +31,7 @@ mvnw verify sonar:sonar -DskipTests -f pom.xml
 
 ## CircleCi 
 
-otherwise use circleci and set your token within an env variable called :
+Otherwise use circleci and set your token within an env variable called :
 SONAR_TOKEN
 
 https://www.baeldung.com/sonar-qube
@@ -109,5 +109,5 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3MzIxMTk1NSwtMjA4ODI2OF19
+eyJoaXN0b3J5IjpbOTQ5NjMzOTY1LC0yMDg4MjY4XX0=
 -->
