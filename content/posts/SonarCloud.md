@@ -5,15 +5,15 @@ draft: false
 ---
 
 # SonarCloud integration
-
+  
 This article as a reminder on how to integrate your project into SonarCloud.
-
+  
 https://sonarcloud.io/projects
 
 
 ## Maven
 
-In the pom.xml add:
+In the pom.xml add:  
 ```xml
     <properties>         
         <sonar.projectKey>blablanumerodeux_kayak</sonar.projectKey>
@@ -24,24 +24,24 @@ In the pom.xml add:
     </properties>
 
 ```
-
-use this maven command only if you're the only dev in the team, otherwise you may override the scan of others:  
-
+  
+Use this maven command only if you're the only dev in the team, otherwise you may override the scan of others:  
+  
 ```bash
 mvnw verify sonar:sonar -DskipTests -f pom.xml
 ```
 
 ## CircleCi 
-
-If you're not alon on your project, then set your token within an environment variable called :
+  
+If you're not alone on your project, then set your token within an environment variable called :  
 **SONAR_TOKEN**
-
+  
 https://www.baeldung.com/sonar-qube
   
 https://docs.sonarqube.org/latest/analysis/gitlab-cicd/
-
+  
 Also **SONAR_HOST_URL** can also be set as an environment variable. 
-
+  
 Finally, here is another example of maven command that you can use within your circleci config file:  
 
 ```bash
@@ -69,7 +69,7 @@ workflows:
 
 https://stackoverflow.com/questions/14979530/why-does-the-maven-command-mvn-sonarsonar-work-without-any-plugin-configurati
   
-  
+   
 https://blog.sonarsource.com/we-had-a-dream-mvn-sonarsonar/
 
 
@@ -78,39 +78,39 @@ https://blog.sonarsource.com/we-had-a-dream-mvn-sonarsonar/
 
 ### SonarLint
 
-Go on your SonarCloud profile and generate a new token.
-Use it to connect to SonarCloud with SonarLint so that your SonarCloud connection within SonarLint will have access to all your organisations and repo.
-So that you won't need to regernate 1 token per repo.
+Go on your SonarCloud profile and generate a new token.  
+Use it to connect to SonarCloud with SonarLint so that your SonarCloud connection within SonarLint will have access to all your organisations and repo.  
+So that you won't need to regernate 1 token per repo.  
 
-Then "Update binding".
-Done.
-then Ctrl-Shift-S to analyse a specific file. Also more options are available in the SonalLint Bar (at the bottom) or in the Analyze menu.
+Then "Update binding".  
+Done.  
+then Ctrl-Shift-S to analyse a specific file. Also more options are available in the SonalLint Bar (at the bottom) or in the Analyze menu.  
 
 
 
 ### SonarQube
+  
+Configure your SonarCloud account on the IntelliJ IDEA params.  
+Then Analyze menu -> Inspect code (Ctrl-Alt-Shift-I) -> inspection profile Sonar -> ok.  
+  
+Done  
+  
+NB: use this plugin only if you're alone on the project.  
+Otherwise you may override the scan of others  
 
-Configure your SonarCloud account on the IntelliJ IDEA params.
-Then Analyze menu -> Inspect code (Ctrl-Alt-Shift-I) -> inspection profile Sonar -> ok.
-
-Done
-
-NB: use this plugin only if you're alone on the project.
-Otherwise you may override the scan of others
-
-
+  
 
 ## Project badge 
-
-once you sent your project to SonarCloud, on the right bottom corner you can generate your badge and paste it on your README.md file.
-
-example of a badge: 
+  
+once you sent your project to SonarCloud, on the right bottom corner you can generate your badge and paste it on your README.md file.  
+  
+example of a badge:   
 
 ```md
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dans-la-rue_homeless&metric=alert_status)](https://sonarcloud.io/dashboard?id=dans-la-rue_homeless)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MTExMDU2MywtODUxNzQ5NDQzLDIwMz
+eyJoaXN0b3J5IjpbLTc3OTM4NTI4NiwtODUxNzQ5NDQzLDIwMz
 EzMTY5OTUsOTQ5NjMzOTY1LC0yMDg4MjY4XX0=
 -->
