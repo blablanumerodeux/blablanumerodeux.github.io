@@ -58,10 +58,18 @@ workflows:
           context: SonarCloud
 
 
-
 ```
 
-## IDEA plugins
+
+## More doc on how the sonar maven plugin works
+
+https://stackoverflow.com/questions/14979530/why-does-the-maven-command-mvn-sonarsonar-work-without-any-plugin-configurati
+
+https://blog.sonarsource.com/we-had-a-dream-mvn-sonarsonar/
+
+
+
+## IntelliJ IDEA plugins
 
 ### SonarLint
 
@@ -85,12 +93,6 @@ Done
 NB: use this plugin only if you're alone on the project.
 Otherwise you may override the scan of others
 
-## More doc
-
-https://stackoverflow.com/questions/14979530/why-does-the-maven-command-mvn-sonarsonar-work-without-any-plugin-configurati
-
-https://blog.sonarsource.com/we-had-a-dream-mvn-sonarsonar/
-
 
 
 ## Project badge 
@@ -104,5 +106,5 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyMzM3MzU0OSwtMjA4ODI2OF19
+eyJoaXN0b3J5IjpbLTIyOTkwMjk5NSwtMjA4ODI2OF19
 -->
