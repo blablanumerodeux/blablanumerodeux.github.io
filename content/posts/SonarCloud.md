@@ -40,7 +40,7 @@ https://docs.sonarqube.org/latest/analysis/gitlab-cicd/
 
 Also **SONAR_HOST_URL** can also be set as an environment variable. 
 
-Finally, here is another example of maven command that you can use within your circleci config file 
+Finally, here is another example of maven command that you can use within your circleci config file:  
 
 ```
 mvnw source:jar javadoc:jar install -DcreateChecksum=true -e sonar:sonar
@@ -108,6 +108,6 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzMTMxNjk5NSw5NDk2MzM5NjUsLTIwOD
-gyNjhdfQ==
+eyJoaXN0b3J5IjpbNTY2OTU2MzkzLDIwMzEzMTY5OTUsOTQ5Nj
+MzOTY1LC0yMDg4MjY4XX0=
 -->
