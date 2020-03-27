@@ -1,5 +1,5 @@
 ---
-title: "Secrets and properties management"
+title: "SonarCloud"
 date: 2019-10-17T20:53:32-04:00
 draft: false
 ---
@@ -108,6 +108,6 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1MTc0OTQ0MywyMDMxMzE2OTk1LDk0OT
-YzMzk2NSwtMjA4ODI2OF19
+eyJoaXN0b3J5IjpbMjU1Mjg3MTQ3LC04NTE3NDk0NDMsMjAzMT
+MxNjk5NSw5NDk2MzM5NjUsLTIwODgyNjhdfQ==
 -->
