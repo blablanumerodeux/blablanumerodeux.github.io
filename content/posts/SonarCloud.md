@@ -15,7 +15,8 @@ https://sonarcloud.io/projects
 
 In the pom.xml add:
 ```xml
-    <properties>        <sonar.projectKey>blablanumerodeux_kayak</sonar.projectKey>
+    <properties>         
+        <sonar.projectKey>blablanumerodeux_kayak</sonar.projectKey>
         <sonar.organization>blablanumerodeux</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 <!--        this should not be committed-->
@@ -108,6 +109,6 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTc4NjQwMDUsLTg1MTc0OTQ0MywyMD
-MxMzE2OTk1LDk0OTYzMzk2NSwtMjA4ODI2OF19
+eyJoaXN0b3J5IjpbODQxNzUzOTUsLTg1MTc0OTQ0MywyMDMxMz
+E2OTk1LDk0OTYzMzk2NSwtMjA4ODI2OF19
 -->
