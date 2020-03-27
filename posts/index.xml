@@ -39,19 +39,6 @@ And on the hugo branch you put the hugo project</description>
     
     <item>
       <title>Secrets and properties management</title>
-      <link>https://blablanumerodeux.github.io/posts/sonarcloud/</link>
-      <pubDate>Thu, 17 Oct 2019 20:53:32 -0400</pubDate>
-      
-      <guid>https://blablanumerodeux.github.io/posts/sonarcloud/</guid>
-      <description>SonarCloud integration This article as a reminder on how to integrate your project into SonarCloud.
-https://sonarcloud.io/projects
-Maven In the pom.xml add:
-&amp;lt;properties&amp;gt; &amp;lt;sonar.projectKey&amp;gt;blablanumerodeux_kayak&amp;lt;/sonar.projectKey&amp;gt; &amp;lt;sonar.organization&amp;gt;blablanumerodeux&amp;lt;/sonar.organization&amp;gt; &amp;lt;sonar.host.url&amp;gt;https://sonarcloud.io&amp;lt;/sonar.host.url&amp;gt; &amp;lt;!-- this should not be committed--&amp;gt; &amp;lt;sonar.login&amp;gt;d0d909736d1c196a530e6f3f26e62bee1a81cd7f&amp;lt;/sonar.login&amp;gt; &amp;lt;/properties&amp;gt;  use this maven command only if you&amp;rsquo;re the only dev in the team, otherwise you may override the scan of others:
-mvnw verify sonar:sonar -DskipTests -f pom.xml  CircleCi If you&amp;rsquo;re not alon on your project, then set your token within an environment variable called : SONAR_TOKEN</description>
-    </item>
-    
-    <item>
-      <title>Secrets and properties management</title>
       <link>https://blablanumerodeux.github.io/posts/properties-files-and-secrets-managers/</link>
       <pubDate>Thu, 17 Oct 2019 20:53:32 -0400</pubDate>
       
@@ -61,6 +48,19 @@ spring.profiles.active=local  or at runtime like that:
 java -Dspring.profiles.active=local -jar yourApplication.jar  It will automatically take the corresponding properties file in the classpath application-local.propertie
 Secrets with Spring boot When you have to specify a secret, just define a placeholder instead:
 spring.datasource.password=${db-password}  and pass the value at runtime with a Java -D variable:</description>
+    </item>
+    
+    <item>
+      <title>SonarCloud</title>
+      <link>https://blablanumerodeux.github.io/posts/sonarcloud/</link>
+      <pubDate>Thu, 17 Oct 2019 20:53:32 -0400</pubDate>
+      
+      <guid>https://blablanumerodeux.github.io/posts/sonarcloud/</guid>
+      <description>SonarCloud integration This article as a reminder on how to integrate your project into SonarCloud.
+https://sonarcloud.io/projects
+Maven In the pom.xml add:
+&amp;lt;properties&amp;gt; &amp;lt;sonar.projectKey&amp;gt;blablanumerodeux_kayak&amp;lt;/sonar.projectKey&amp;gt; &amp;lt;sonar.organization&amp;gt;blablanumerodeux&amp;lt;/sonar.organization&amp;gt; &amp;lt;sonar.host.url&amp;gt;https://sonarcloud.io&amp;lt;/sonar.host.url&amp;gt; &amp;lt;!-- this should not be committed--&amp;gt; &amp;lt;sonar.login&amp;gt;d0d909736d1c196a530e6f3f26e62bee1a81cd7f&amp;lt;/sonar.login&amp;gt; &amp;lt;/properties&amp;gt;  use this maven command only if you&amp;rsquo;re the only dev in the team, otherwise you may override the scan of others:
+mvnw verify sonar:sonar -DskipTests -f pom.xml  CircleCi If you&amp;rsquo;re not alon on your project, then set your token within an environment variable called : SONAR_TOKEN</description>
     </item>
     
     <item>
