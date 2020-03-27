@@ -102,7 +102,7 @@ Otherwise you may override the scan of others
 
 ## Project badge 
   
-once you sent your project to SonarCloud, on the right bottom corner you can generate your badge and paste it on your README.md file.  
+Once you sent your project to SonarCloud, on the right bottom corner you can generate your badge and paste it on your README.md file.  
   
 example of a badge:   
 
@@ -111,6 +111,7 @@ example of a badge:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3OTM4NTI4NiwtODUxNzQ5NDQzLDIwMz
-EzMTY5OTUsOTQ5NjMzOTY1LC0yMDg4MjY4XX0=
+eyJoaXN0b3J5IjpbMTA5OTQ2OTQwMiwtNzc5Mzg1Mjg2LC04NT
+E3NDk0NDMsMjAzMTMxNjk5NSw5NDk2MzM5NjUsLTIwODgyNjhd
+fQ==
 -->
