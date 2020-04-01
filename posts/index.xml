@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Damien LAMBLA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Mar 2020 20:53:32 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2020 20:53:32 -0400</lastBuildDate>
     
 	<atom:link href="https://blablanumerodeux.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Host your angular app on github</title>
+      <link>https://blablanumerodeux.github.io/posts/gh-pages/</link>
+      <pubDate>Tue, 31 Mar 2020 20:53:32 -0400</pubDate>
+      
+      <guid>https://blablanumerodeux.github.io/posts/gh-pages/</guid>
+      <description>Host your angular app on github CNAME record On your domain provider, create a new CNAME record such as:
+dakar.project.lambla.eu.-&amp;gt; dakarinternational.github.io.
+In your src folder create a CNAME file and write your custom domain in it.
+then, inside angular.json file add this line:
+&amp;quot;assets&amp;quot;: [ &amp;quot;src/favicon.ico&amp;quot;, &amp;quot;src/assets&amp;quot;, &amp;quot;src/CNAME&amp;quot; // This is the change you need to make. ],  https://github.com/tschaub/gh-pages/issues/236
+Angular build npm run ng build -- --prod --base-href &amp;quot;https://dakarinternational.</description>
+    </item>
     
     <item>
       <title>SonarCloud</title>

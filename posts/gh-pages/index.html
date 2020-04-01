@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Posts</title>
+        <title>Host your angular app on github</title>
         
         <style>
 
@@ -61,9 +61,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.55.0" />
         
-        <link href="/posts/index.xml" rel="alternate" type="application/rss&#43;xml" title="Damien LAMBLA" />
-        <link href="/posts/index.xml" rel="feed" type="application/rss&#43;xml" title="Damien LAMBLA" />
-        
 
         
 
@@ -83,7 +80,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Posts</a>
+                    <a class="navbar-brand visible-xs" href="#">Host your angular app on github</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -128,9 +125,7 @@
 
 <main>
 
-    <h2>Posts</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -144,79 +139,86 @@
     
 
 </div>
-  <div class="item">
 
-    
-    
-    
 
-    
-    
+    <br> <div class="text-justify">
 
-    <h4><a href="/posts/sonarcloud/">SonarCloud</a></h4>
-    <h5>March 26, 2020</h5>
-    
+<h1 id="host-your-angular-app-on-github">Host your angular app on github</h1>
 
+<h2 id="cname-record">CNAME record</h2>
+
+<p>On your domain provider, create a new CNAME record such as:<br />
+ <code>dakar.project.lambla.eu.-&gt; dakarinternational.github.io.</code></p>
+
+<p>In your src folder create a CNAME file and write your custom domain in it.<br />
+then, inside angular.json file add this line:</p>
+
+<pre><code class="language-json">&quot;assets&quot;: [  
+&quot;src/favicon.ico&quot;,  
+&quot;src/assets&quot;,  
+&quot;src/CNAME&quot; // This is the change you need to make.  
+],
+</code></pre>
+
+<p><a href="https://github.com/tschaub/gh-pages/issues/236">https://github.com/tschaub/gh-pages/issues/236</a></p>
+
+<h2 id="angular-build">Angular build</h2>
+
+<pre><code>npm run ng build -- --prod --base-href &quot;https://dakarinternational.github.io/DaKar-ngFront/&quot;
+</code></pre>
+
+<p>or more important if you want to use your domain:</p>
+
+<pre><code>npm run ng build -- --prod --base-href &quot;https://dakar.project.lambla.eu/&quot;
+</code></pre>
+
+<p>otherwise you may have:<br />
+<code>Mixed Content: The page at ‘&lt;your_gpages_remote_url&gt;’ was loaded over HTTPS, but requested an insecure stylesheet ‘&lt;url_provided_with_http_prefix_while_deploying&gt;/styles.acb808cb000123f5c6ec.css'. This request has been blocked; the content must be served over HTTPS.</code></p>
+
+<h2 id="angular-cli-deploy">Angular CLI deploy</h2>
+
+<pre><code class="language-bash">npx ngh --dir=dist/DaKar-ngFront  
+or  
+npx angular-cli-ghpages --dir=dist/homeless-front
+</code></pre>
+
+<p><a href="https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4">https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4</a></p>
+
+<h2 id="github-pages-config">Github pages config</h2>
+
+<p><a href="https://github.com/DaKarInternational/DaKar-ngFront/settings">https://github.com/DaKarInternational/DaKar-ngFront/settings</a></p>
+
+<p>in Settings -&gt; Options -&gt; Github Pages :<br />
+put your custom domain such as :  <em>dakar.project.lambla.eu</em><br />
+enforce https.<br />
+done</p>
+
+<h2 id="sources">Sources</h2>
+
+<p><a href="https://angular.io/guide/deployment">https://angular.io/guide/deployment</a></p>
+
+<p><a href="https://dev.to/apdharshi/deploying-your-angular-application-to-github-pages-4laf">https://dev.to/apdharshi/deploying-your-angular-application-to-github-pages-4laf</a></p>
+
+<p><a href="https://help.github.com/en/github/working-with-github-pages/securing-your-github-pages-site-with-https">https://help.github.com/en/github/working-with-github-pages/securing-your-github-pages-site-with-https</a></p>
+
+<p>Other things to explore:</p>
+
+<p><a href="https://www.codementor.io/@landonpatmore/how-to-setup-a-static-website-using-github-pages-and-cloudflare-with-your-own-domain-name-jb99nbuoe">https://www.codementor.io/@landonpatmore/how-to-setup-a-static-website-using-github-pages-and-cloudflare-with-your-own-domain-name-jb99nbuoe</a></p>
+
+<p><a href="https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc">https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc</a><br />
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTIwMzg1MDMxNzVdfQ==
+--></p>
 </div>
-  <div class="item">
-
-    
-    
-    
 
     
     
 
-    <h4><a href="/posts/jfrog-bintray/">Maven deploy to OSS JFrog to Maven Central</a></h4>
-    <h5>November 10, 2019</h5>
-    
-
-</div>
-  <div class="item">
-
-    
-    
     
 
     
-    
-
-    <h4><a href="/posts/hugo/deploy/">HUGO</a></h4>
-    <h5>October 17, 2019</h5>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/posts/properties-files-and-secrets-managers/">Secrets and properties management</a></h4>
-    <h5>October 17, 2019</h5>
-    
-
-</div>
- 
 
 </main>
-
-
-
-<div class="pages">
-
-     
-    <a class="icon pages-icon" href="/posts/page/2/" rel="next">
-        <i class="fa fa-arrow-right"></i>
-    </a>
-    
-
-</div>
-
-
 
         <footer>
 
