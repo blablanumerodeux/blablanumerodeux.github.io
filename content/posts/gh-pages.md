@@ -59,25 +59,28 @@ https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-p
 https://github.com/DaKarInternational/DaKar-ngFront/settings
     
 in Settings -> Options -> Github Pages :    
-put your custom domain such as :  *dakar.project.lambla.eu*  
+put your custom domain such as :  *dakar.project.lambla.eu*    
 enforce https.    
-done  
-
+done    
+  
 
 ## Sources
-
+  
 https://angular.io/guide/deployment
-  
+    
 https://dev.to/apdharshi/deploying-your-angular-application-to-github-pages-4laf
-  
+    
 https://help.github.com/en/github/working-with-github-pages/securing-your-github-pages-site-with-https
   
-
-Other things to explore:  
   
+Other things to explore:    
+    
 https://www.codementor.io/@landonpatmore/how-to-setup-a-static-website-using-github-pages-and-cloudflare-with-your-own-domain-name-jb99nbuoe
-  
-https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc  
+    
+https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc    
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NDk4OTYzMSwtMjAzODUwMzE3NV19
+eyJoaXN0b3J5IjpbLTIwODM3MTQ5MTUsLTIwMzg1MDMxNzVdfQ
+==
 -->
