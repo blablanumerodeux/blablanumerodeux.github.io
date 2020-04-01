@@ -5,15 +5,16 @@ draft: false
 ---
 
 # Host your angular app on github
-
+  
 
 ## CNAME record
-
-On your domain provider, create a new CNAME record such as:  
+  
+On your domain provider, create a new CNAME record such as:   
  `dakar.project.lambla.eu.-> dakarinternational.github.io.` 
+  
+In your src folder create a CNAME file and write your custom domain in it.    
+then, inside angular.json file add this line:       
 
-In your src folder create a CNAME file and write your custom domain in it.  
-then, inside angular.json file add this line:     
 ```json
 "assets": [  
 "src/favicon.ico",  
@@ -21,27 +22,29 @@ then, inside angular.json file add this line:
 "src/CNAME" // This is the change you need to make.  
 ],
 ```
-
+  
 https://github.com/tschaub/gh-pages/issues/236
-
+  
 
 
 ## Angular build
-
-```
+  
+```bash
 npm run ng build -- --prod --base-href "https://dakarinternational.github.io/DaKar-ngFront/"
 ```
 
-or more important if you want to use your domain:    
-```
+or more important if you want to use your domain:     
+```bash  
 npm run ng build -- --prod --base-href "https://dakar.project.lambla.eu/"
-```
-otherwise you may have:  
+```  
+  
+otherwise you may have:    
+
 `Mixed Content: The page at ‘<your_gpages_remote_url>’ was loaded over HTTPS, but requested an insecure stylesheet ‘<url_provided_with_http_prefix_while_deploying>/styles.acb808cb000123f5c6ec.css'. This request has been blocked; the content must be served over HTTPS.`
 
-
+  
 ## Angular CLI deploy 
-
+  
 ```bash
 npx ngh --dir=dist/DaKar-ngFront  
 or  
@@ -49,15 +52,15 @@ npx angular-cli-ghpages --dir=dist/homeless-front
 ```
 
 https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4
-
+  
 ## Github pages config
-
+  
 
 https://github.com/DaKarInternational/DaKar-ngFront/settings
-  
-in Settings -> Options -> Github Pages :  
+    
+in Settings -> Options -> Github Pages :    
 put your custom domain such as :  *dakar.project.lambla.eu*  
-enforce https.  
+enforce https.    
 done  
 
 
@@ -76,5 +79,5 @@ https://www.codementor.io/@landonpatmore/how-to-setup-a-static-website-using-git
   
 https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzg1MDMxNzVdfQ==
+eyJoaXN0b3J5IjpbLTk4NDk4OTYzMSwtMjAzODUwMzE3NV19
 -->
