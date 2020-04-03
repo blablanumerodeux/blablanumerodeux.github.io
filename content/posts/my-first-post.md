@@ -17,7 +17,7 @@ Aug 2019 – Present
 Personal website / blog where I sometime post some technical articles about whatever I want to remember or to share.
   
   
-This website is made with HUGO which is a static website generator made in JS.  
+This website is made with `HUGO` which is a static website generator made in JS.  
 All the articles are also available in a MarkDown format directly on my GitHub.
 
   
@@ -83,6 +83,7 @@ See project: [http://dakar.project.lambla.eu/](http://dakar.project.lambla.eu/)
 eyJoaXN0b3J5IjpbLTUyMTY3ODY2OF19  
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2OTg5MDMwNiwzNjk1MDMxMDAsLTc3MD
-A5Mzg3MiwtMTg1MDMyNDE4NywtNTIxNjc4NjY4XX0=
+eyJoaXN0b3J5IjpbMTgyNDUwODg3NiwxMTY5ODkwMzA2LDM2OT
+UwMzEwMCwtNzcwMDkzODcyLC0xODUwMzI0MTg3LC01MjE2Nzg2
+NjhdfQ==
 -->
