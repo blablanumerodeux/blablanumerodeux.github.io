@@ -40,7 +40,7 @@ The numbers will be updated live by the owners of the shelters.
 A list of various available services will be displayed to the homeless people along with the current state of the service.
   
   
-Project made with Spring Boot 1 (No Webflux), Swagger, ReactJs, PostgresQL, Maven, CircleCI, and Docker. 
+Project made with Spring Boot 1 (No Webflux), Swagger, Angular, PostgresQL, Maven, CircleCI, and Docker. 
   
   
 See project front hosted on github:  [https://homeless.project.lambla.eu](https://homeless.project.lambla.eu)    
@@ -83,6 +83,6 @@ See project: [http://dakar.project.lambla.eu/](http://dakar.project.lambla.eu/)
 eyJoaXN0b3J5IjpbLTUyMTY3ODY2OF19  
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY5NTAzMTAwLC03NzAwOTM4NzIsLTE4NT
-AzMjQxODcsLTUyMTY3ODY2OF19
+eyJoaXN0b3J5IjpbMTE2OTg5MDMwNiwzNjk1MDMxMDAsLTc3MD
+A5Mzg3MiwtMTg1MDMyNDE4NywtNTIxNjc4NjY4XX0=
 -->
