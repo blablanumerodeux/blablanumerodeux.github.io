@@ -43,7 +43,9 @@ A list of various available services will be displayed to the homeless people al
 Project made with Spring Boot 1 (No Webflux), Swagger, ReactJs, PostgresQL, Maven, CircleCI, and Docker. 
   
   
-See project backend: [https://homeless.project.lambla.eu/swagger-ui.html#/](https://homeless.project.lambla.eu/swagger-ui.html#/)  
+See project front hosted on github:  [https://homeless.project.lambla.eu](https://homeless.project.lambla.eu)    
+
+See project backend (swagger)): [https://homeless-api.project.lambla.eu/swagger-ui.html#/](https://homeless-api.project.lambla.eu/swagger-ui.html#/)  
 
   
   
@@ -60,7 +62,7 @@ The goal is to learn as much as possible about new tech while creating a small b
   
   
   
-See project: [http://dakar.project.lambla.eu/](http://dakar.lambla.eu/)    
+See project: [http://dakar.project.lambla.eu/](http://dakar.project.lambla.eu/)    
 
   
   
@@ -69,6 +71,7 @@ See project: [http://dakar.project.lambla.eu/](http://dakar.lambla.eu/)
   
 ### webdav  
 [https://webdav.lambla.eu/webdav/](https://webdav.lambla.eu/webdav/)    
+  
   
 ### homeserver  
 [http://home.lambla.eu/](http://home.lambla.eu/)  
@@ -80,6 +83,6 @@ See project: [http://dakar.project.lambla.eu/](http://dakar.lambla.eu/)
 eyJoaXN0b3J5IjpbLTUyMTY3ODY2OF19  
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3MDA5Mzg3MiwtMTg1MDMyNDE4NywtNT
-IxNjc4NjY4XX0=
+eyJoaXN0b3J5IjpbMzY5NTAzMTAwLC03NzAwOTM4NzIsLTE4NT
+AzMjQxODcsLTUyMTY3ODY2OF19
 -->
