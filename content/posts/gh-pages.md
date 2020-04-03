@@ -77,8 +77,41 @@ done
 6.  Click on `Secrets`
 7.  Click on `Add new secret`
 8.  Put `ACCESS_TOKEN` for name and `your github token that you had copy` as value. Now click on `Add secret` button. A secret with name `ACCESS_TOKEN` is saved in your repository.
-9. 
+9. in your repository's `Action` tab, set up workflow using these code
+
+main.yaml
 ```
+
+```yml
+
+```yaml
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 8.15.1
+      uses: actions/setup-node@v1
+      with:
+        node-version: 8.15.1
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v2
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: develop
+        BRANCH: gh-pages
+        FOLDER: dist/homeless-front
+        BUILD_SCRIPT: npm install && npm run ng build -- --prod --base-href "https://homeless.project.lambla.eu/"
+```
+
+
+
+
 
 https://uxworks.org/how-to-deploy-angular-app-on-github-pages-using-github-actions
 
@@ -100,6 +133,6 @@ https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDYyODk5NzAsLTIwODM3MTQ5MTUsLT
+eyJoaXN0b3J5IjpbLTEwOTYzMzg1MjMsLTIwODM3MTQ5MTUsLT
 IwMzg1MDMxNzVdfQ==
 -->
