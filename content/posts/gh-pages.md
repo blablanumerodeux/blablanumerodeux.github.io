@@ -64,6 +64,25 @@ enforce https.
 done    
   
 
+
+## Github Actions setup
+
+
+```
+1.  First login to [https://github.com](https://github.com)
+2.  Go to [https://github.com/setting/profile](https://github.com/setting/profile)
+3.  Now click on to the `Developer settings`
+4.  Click on `Personal access tokens` and generate a token
+5. 1.  Go to your repository `Settings`
+6.  Click on `Secrets`
+7.  Click on `Add new secret`
+8.  Put `ACCESS_TOKEN` for name and `your github token that you had copy` as value. Now click on `Add secret` button. A secret with name `ACCESS_TOKEN` is saved in your repository.
+9. 
+```
+
+https://uxworks.org/how-to-deploy-angular-app-on-github-pages-using-github-actions
+
+
 ## Sources
   
 https://angular.io/guide/deployment
@@ -81,6 +100,6 @@ https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODM3MTQ5MTUsLTIwMzg1MDMxNzVdfQ
-==
+eyJoaXN0b3J5IjpbLTE2NDYyODk5NzAsLTIwODM3MTQ5MTUsLT
+IwMzg1MDMxNzVdfQ==
 -->
