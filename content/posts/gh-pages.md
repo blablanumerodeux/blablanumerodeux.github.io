@@ -82,8 +82,6 @@ done
 main.yaml
 ```
 
-```yml
-
 ```yaml
 name: CI
 
@@ -133,6 +131,6 @@ https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTYzMzg1MjMsLTIwODM3MTQ5MTUsLT
-IwMzg1MDMxNzVdfQ==
+eyJoaXN0b3J5IjpbLTM1MDk0MjQ1NSwtMTA5NjMzODUyMywtMj
+A4MzcxNDkxNSwtMjAzODUwMzE3NV19
 -->
