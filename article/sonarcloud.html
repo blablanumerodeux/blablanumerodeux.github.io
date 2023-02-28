@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="/_assets/main.css" />
+
+    <title>SonarCloud - lambla.eu</title>
+  <link rel="stylesheet" href="/_markdown_plugin_assets/highlight.js/atom-one-light.css" /></head>
+  <body>
+    <div class="main">
+      <nav class="navigation">
+        <a href="/">lambla.eu</a>
+      </nav>
+      <article>
+        <header>
+          <h1 class="article-title">SonarCloud</h1>
+          <div class="article-info">
+            <div>
+              <span
+                >Created At：<time datetime="1608923473819"
+                  >2020-12-25 14:11</time
+                ></span
+              >
+              <span
+                >Updated At：<time datetime="1614956673360"
+                  >2021-03-05 10:04</time
+                ></span
+              >
+            </div>
+            
+          </div>
+        </header>
+        <div class="article-content markdown-body"><h1 id="sonarcloud-integration">SonarCloud integration</h1>
+<p>This article as a reminder on how to integrate your project into SonarCloud.</p>
+<p><a title="https://sonarcloud.io/projects" href="https://sonarcloud.io/projects">https://sonarcloud.io/projects</a></p>
+<h2 id="maven">Maven</h2>
+<p>In the pom.xml add:</p>
+<div><pre class="hljs"><code>    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span>         
+        <span class="hljs-tag">&lt;<span class="hljs-name">sonar.projectKey</span>&gt;</span>blablanumerodeux_kayak<span class="hljs-tag">&lt;/<span class="hljs-name">sonar.projectKey</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">sonar.organization</span>&gt;</span>blablanumerodeux<span class="hljs-tag">&lt;/<span class="hljs-name">sonar.organization</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">sonar.host.url</span>&gt;</span>https://sonarcloud.io<span class="hljs-tag">&lt;/<span class="hljs-name">sonar.host.url</span>&gt;</span>
+<span class="hljs-comment">&lt;!--        this should not be committed--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">sonar.login</span>&gt;</span>d0d909736d1c196a530e6f3f26e62bee1a81cd7f<span class="hljs-tag">&lt;/<span class="hljs-name">sonar.login</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span>
+</code></pre></div>
+<p>Use this maven command only if you're the only dev in the team, otherwise you may override the scan of others:</p>
+<div><pre class="hljs"><code>mvnw verify sonar:sonar -DskipTests -f pom.xml</code></pre></div>
+<h3 id="nb">NB</h3>
+<p>you can also specify these params from the mvn command line that will be launched by jenkins for example -&gt; see below at the end</p>
+<h2 id="circleci">CircleCi</h2>
+<p>If you're not alone on your project, then set your token within an environment variable called :<br />
+<strong>SONAR_TOKEN</strong></p>
+<p><a title="https://www.baeldung.com/sonar-qube" href="https://www.baeldung.com/sonar-qube">https://www.baeldung.com/sonar-qube</a></p>
+<p><a title="https://docs.sonarqube.org/latest/analysis/gitlab-cicd/" href="https://docs.sonarqube.org/latest/analysis/gitlab-cicd/">https://docs.sonarqube.org/latest/analysis/gitlab-cicd/</a></p>
+<p>Also <strong>SONAR_HOST_URL</strong> can also be set as an environment variable.</p>
+<p>Finally, here is another example of maven command that you can use within your circleci config file:</p>
+<div><pre class="hljs"><code>mvnw <span class="hljs-built_in">source</span>:jar javadoc:jar install -DcreateChecksum=<span class="hljs-literal">true</span> -e sonar:sonar</code></pre></div>
+<p>Also, don't forget to include your environment variables (via the context features) with your workflows on your circleci config file like such:</p>
+<div><pre class="hljs"><code>  
+<span class="hljs-attr">workflows:</span>  
+  <span class="hljs-attr">version:</span> <span class="hljs-number">2</span>  
+  
+  <span class="hljs-attr">just-build:</span>  
+    <span class="hljs-attr">jobs:</span>  
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">build:</span>  
+          <span class="hljs-attr">context:</span> <span class="hljs-string">SonarCloud</span>
+
+</code></pre></div>
+<h2 id="more-doc-on-how-the-sonar-maven-plugin-works">More doc on how the sonar maven plugin works</h2>
+<p><a title="https://stackoverflow.com/questions/14979530/why-does-the-maven-command-mvn-sonarsonar-work-without-any-plugin-configurati" href="https://stackoverflow.com/questions/14979530/why-does-the-maven-command-mvn-sonarsonar-work-without-any-plugin-configurati">https://stackoverflow.com/questions/14979530/why-does-the-maven-command-mvn-sonarsonar-work-without-any-plugin-configurati</a></p>
+<p><a title="https://blog.sonarsource.com/we-had-a-dream-mvn-sonarsonar/" href="https://blog.sonarsource.com/we-had-a-dream-mvn-sonarsonar/">https://blog.sonarsource.com/we-had-a-dream-mvn-sonarsonar/</a></p>
+<h2 id="intellij-idea-plugins">IntelliJ IDEA plugins</h2>
+<h3 id="sonarlint">SonarLint</h3>
+<p>Go on your SonarCloud profile and generate a new token.<br />
+Use it to connect to SonarCloud with SonarLint so that your SonarCloud connection within SonarLint will have access to all your organisations and repo.<br />
+So that you won't need to regernate 1 token per repo.</p>
+<p>Then "Update binding".<br />
+Done.<br />
+then Ctrl-Shift-S to analyse a specific file. Also more options are available in the SonalLint Bar (at the bottom) or in the Analyze menu.</p>
+<h3 id="sonarqube">SonarQube</h3>
+<p>Configure your SonarCloud account on the IntelliJ IDEA params.<br />
+Then Analyze menu -&gt; Inspect code (Ctrl-Alt-Shift-I) -&gt; inspection profile Sonar -&gt; ok.</p>
+<p>Done</p>
+<p>NB: use this plugin only if you're alone on the project.<br />
+Otherwise you may override the scan of others</p>
+<h2 id="project-badge">Project badge</h2>
+<p>Once you sent your project to SonarCloud, on the right bottom corner you can generate your badge and paste it on your README.md file.</p>
+<p>example of a badge:</p>
+<div><pre class="hljs"><code>[<span class="hljs-string">![Quality Gate Status</span>](<span class="hljs-link">https://sonarcloud.io/api/project_badges/measure?project=dans-la-rue_homeless&amp;metric=alert_status</span>)](<span class="hljs-link">https://sonarcloud.io/dashboard?id=dans-la-rue_homeless</span>)</code></pre></div>
+<h2 id="jenkins-with-maven">Jenkins with maven</h2>
+<p>Jenkinsfile</p>
+<div><pre class="hljs"><code><span class="hljs-comment">//                               sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar \</span>
+  sh <span class="hljs-string">"""./mvnw sonar:sonar \
+                  -Dsonar.host.url=${codeQualityManagementConfig.api_url} \
+                  -Dsonar.projectKey=${sonarProjectName} \
+                  -Dsonar.projectName=${sonarProjectName} \
+                  -Dsonar.login=${bncSonarCredentials.credentials.username} \
+                  -Dsonar.password=${bncSonarCredentials.credentials.password} \
+                  -Dsonar.branch.name=${env.BRANCH_NAME} \
+                  """</span>
+<span class="hljs-comment">//                                               -Dsonar.branch.target=${targetBranch}"""</span>
+</code></pre></div>
+<h2 id="add-those-for-sonar-to-differenciate-the-tests-from-the-src">add those for sonar to differenciate the tests from the src</h2>
+<p>sonar-project.properties</p>
+<div><pre class="hljs"><code><span class="hljs-attr">sonar.sources</span>=<span class="hljs-string">./src/main/java</span>
+<span class="hljs-attr">sonar.tests</span>=<span class="hljs-string">./src/test/java</span>
+</code></pre></div>
+<h2 id="or-sonarqube-with-jacoco-for-test-coverage">or sonarqube with jacoco for test coverage</h2>
+<div><pre class="hljs"><code>utils.shWithNoTrace <span class="hljs-string">"""./mvnw sonar:sonar \
+      -Dsonar.host.url=${codeQualityManagementConfig.api_url} \
+      -Dsonar.projectKey=${sonarProjectName} \
+      -Dsonar.projectName=${sonarProjectName} \
+      -Dsonar.login=${bncSonarCredentials.credentials.username} \
+      -Dsonar.password=${bncSonarCredentials.credentials.password} \
+      -Dsonar.branch.name=${env.BRANCH_NAME} \
+      -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco.exec \
+      """</span>
+<span class="hljs-comment">//                                               -Dsonar.branch.target=${targetBranch}"""</span>
+
+<span class="hljs-comment">//                             }</span></code></pre></div>
+<p><a title="https://docs.sonarqube.org/pages/viewpage.action?pageId=1442166" href="https://docs.sonarqube.org/pages/viewpage.action?pageId=1442166">https://docs.sonarqube.org/pages/viewpage.action?pageId=1442166</a></p>
+</div>
+      </article>
+    </div>
+  </body>
+</html>
