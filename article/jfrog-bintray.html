@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="/_assets/main.css" />
+
+    <title>JFrog Bintray - lambla.eu</title>
+  <link rel="stylesheet" href="/_markdown_plugin_assets/highlight.js/atom-one-light.css" /></head>
+  <body>
+    <div class="main">
+      <nav class="navigation">
+        <a href="/">lambla.eu</a>
+      </nav>
+      <article>
+        <header>
+          <h1 class="article-title">JFrog Bintray</h1>
+          <div class="article-info">
+            <div>
+              <span
+                >Created At：<time datetime="1608923473809"
+                  >2020-12-25 14:11</time
+                ></span
+              >
+              <span
+                >Updated At：<time datetime="1615002834596"
+                  >2021-03-05 22:53</time
+                ></span
+              >
+            </div>
+            
+            <div>
+              Keywords: 
+              <span class="keyword">javadoc</span>
+              
+              <span class="keyword">maven</span>
+              
+            </div>
+            
+          </div>
+        </header>
+        <div class="article-content markdown-body"><hr />
+<h2 id="title-maven-deploy-to-oss-jfrog-to-maven-centraldate-2019-11-10t205332-0400draft-false">title: "Maven deploy to OSS JFrog to Maven Central"<br />
+date: 2019-11-10T20:53:32-04:00<br />
+draft: false</h2>
+<h1 id="maven-deploy-to-oss-jfrog-to-maven-central">Maven deploy to OSS JFrog to Maven Central</h1>
+<h2 id="jfrog-bintray">JFrog BinTray</h2>
+<p>Begin by creating an organisation and a package on <a title="https://bintray.com/dakarinternational" href="https://bintray.com/dakarinternational">JFrog BinTray</a>.<br />
+Edit your package and request that your package be <a title="https://www.jfrog.com/confluence/display/RTF/Deploying+Snapshots+to+oss.jfrog.org" href="https://www.jfrog.com/confluence/display/RTF/Deploying+Snapshots+to+oss.jfrog.org">added to JCenter</a><br />
+Don't forgot to tick the option : <em>Host my snapshot build artifacts on the OSS Artifactory</em><br />
+Wait for your request to be granted.</p>
+<p>Then, Edit your profile and find your API key.</p>
+<h2 id="oss-jfrog">OSS JFrog</h2>
+<p>Use that key as your password to connect in <a title="https://oss.jfrog.org/artifactory/webapp/#/home" href="https://oss.jfrog.org/artifactory/webapp/#/home">OSS-JFrog</a>.<br />
+Use your BinTray profile name as your username to connect in OSS-JFrog.</p>
+<h2 id="maven">Maven</h2>
+<p>Then in your pom.xml add this directly under <code>&lt;project&gt;</code>:</p>
+<div><pre class="hljs"><code>    <span class="hljs-comment">&lt;!--this to push directly a release into bintray, does not work for snapshot though--&gt;</span>
+<span class="hljs-comment">&lt;!--	&lt;distributionManagement&gt;
+        &lt;repository&gt;
+            &lt;id&gt;bintray-blablanumerodeux-dakar&lt;/id&gt;
+            &lt;name&gt;blablanumerodeux-dakar&lt;/name&gt;
+            &lt;url&gt;https://api.bintray.com/maven/dakarinternational/dakar/dakar/;publish=1&lt;/url&gt;
+        &lt;/repository&gt;
+    &lt;/distributionManagement&gt;--&gt;</span>
+
+    <span class="hljs-comment">&lt;!--this to push to OSS --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">distributionManagement</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">repository</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>oss-jfrog-artifactory-releases<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>https://oss.jfrog.org/artifactory/oss-release-local<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">repository</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">snapshotRepository</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>snapshots<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>oss-jfrog-artifactory-snapshots<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>https://oss.jfrog.org/artifactory/oss-snapshot-local<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">snapshotRepository</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">distributionManagement</span>&gt;</span></code></pre></div>
+<p>please note the <code>&lt;id&gt;central&lt;/id&gt;</code> and <code>&lt;id&gt;snapshots&lt;/id&gt;</code>, we'll use these below.</p>
+<p>also be sure to configure correctly this part :</p>
+<div><pre class="hljs"><code>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>dans-la-rue<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>homeless<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">packaging</span>&gt;</span>jar<span class="hljs-tag">&lt;/<span class="hljs-name">packaging</span>&gt;</span></code></pre></div>
+<p>Now that your project is configured, go in your settings.xml file which should be somewhere here: <code>~/.m2/settings.xml</code><br />
+And make sure to <strong>add</strong> the servers config like that:</p>
+<div><pre class="hljs"><code><span class="hljs-meta">&lt;?xml version='1.0' encoding='UTF-8'?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">settings</span> <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">'http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd'</span>
+         <span class="hljs-attr">xmlns</span>=<span class="hljs-string">'http://maven.apache.org/SETTINGS/1.0.0'</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">'http://www.w3.org/2001/XMLSchema-instance'</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">servers</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">server</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>bintray-blablanumerodeux-dakar<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">username</span>&gt;</span>blablanumerodeux<span class="hljs-tag">&lt;/<span class="hljs-name">username</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">password</span>&gt;</span>${env.BINTRAY_API_KEY}<span class="hljs-tag">&lt;/<span class="hljs-name">password</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">server</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">server</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">username</span>&gt;</span>blablanumerodeux<span class="hljs-tag">&lt;/<span class="hljs-name">username</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">password</span>&gt;</span>${env.JFROG_API_KEY}<span class="hljs-tag">&lt;/<span class="hljs-name">password</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">server</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">server</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>snapshots<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">username</span>&gt;</span>blablanumerodeux<span class="hljs-tag">&lt;/<span class="hljs-name">username</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">password</span>&gt;</span>${env.JFROG_API_KEY}<span class="hljs-tag">&lt;/<span class="hljs-name">password</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">server</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">servers</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">settings</span>&gt;</span></code></pre></div>
+<p>Note again the <code>&lt;id&gt;central&lt;/id&gt;</code> and  <code>&lt;id&gt;snapshots&lt;/id&gt;</code> that match the one above.</p>
+<p>Then you can deploy your SNAPSHOT or RELEASE with maven: <code>mvn clean source:jar javadoc:jar deploy -DskipTests -DcreateChecksum=true</code></p>
+<p>If you want to publish your package into the Maven Central repo, then you need to make sure that your java source files are inside your JAR file.<br />
+To do that you can configure your maven build with the <code>&lt;resources&gt;</code> tag like that:</p>
+<div><pre class="hljs"><code>    <span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">resources</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">resource</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>src/main/resources<span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">resource</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">resource</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>src/main/java<span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">includes</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>**/*.java<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">includes</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">resource</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">resources</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-javadoc-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.0.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-jar-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.3.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-source-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.1.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span>
+</code></pre></div>
+<h2 id="glossary">Glossary</h2>
+<ul>
+<li>OJO: Oss.Jfrog.Org</li>
+<li>OSS: Open Source Solutions from JFrog</li>
+<li>BinTray: Website used to manage users, organisations, repos,packages,versions,and promot versions to JCenter and Maven Central</li>
+<li>JCenter: One of the public repo where you can host freely your open source software</li>
+<li>Maven Central: The most famous public repo to host freely your open source software</li>
+<li>Artifactory: One of the 3 main repository management tool (Sonartype Nexus, JFrog Artifactory, and NPM)</li>
+<li></li>
+</ul>
+</div>
+      </article>
+    </div>
+  </body>
+</html>

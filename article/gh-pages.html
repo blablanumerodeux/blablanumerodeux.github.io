@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="/_assets/main.css" />
+
+    <title>gh-pages - lambla.eu</title>
+  <link rel="stylesheet" href="/_markdown_plugin_assets/highlight.js/atom-one-light.css" /></head>
+  <body>
+    <div class="main">
+      <nav class="navigation">
+        <a href="/">lambla.eu</a>
+      </nav>
+      <article>
+        <header>
+          <h1 class="article-title">gh-pages</h1>
+          <div class="article-info">
+            <div>
+              <span
+                >Created At：<time datetime="1608923473816"
+                  >2020-12-25 14:11</time
+                ></span
+              >
+              <span
+                >Updated At：<time datetime="1677613334974"
+                  >2023-02-28 14:42</time
+                ></span
+              >
+            </div>
+            
+          </div>
+        </header>
+        <div class="article-content markdown-body"><h1 id="host-your-angular-app-on-github">Host your angular app on github</h1>
+<h2 id="cname-record">CNAME record</h2>
+<p>On your domain provider, create a new CNAME record such as:<br />
+<code>dakar.project.lambla.eu.-&gt; dakarinternational.github.io.</code></p>
+<p>In your src folder create a CNAME file and write your custom domain in it.<br />
+then, inside angular.json file add this line:</p>
+<div><pre class="hljs"><code><span class="hljs-attr">"assets"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>  
+<span class="hljs-string">"src/favicon.ico"</span><span class="hljs-punctuation">,</span>  
+<span class="hljs-string">"src/assets"</span><span class="hljs-punctuation">,</span>  
+<span class="hljs-string">"src/CNAME"</span> <span class="hljs-comment">// This is the change you need to make.  </span>
+<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span></code></pre></div>
+<p><a title="https://github.com/tschaub/gh-pages/issues/236" href="https://github.com/tschaub/gh-pages/issues/236">https://github.com/tschaub/gh-pages/issues/236</a></p>
+<h2 id="angular-build">Angular build</h2>
+<div><pre class="hljs"><code>npm run ng build -- --prod --base-href <span class="hljs-string">"https://dakarinternational.github.io/DaKar-ngFront/"</span></code></pre></div>
+<p>or more important if you want to use your domain:</p>
+<div><pre class="hljs"><code>npm run ng build -- --prod --base-href <span class="hljs-string">"https://dakar.project.lambla.eu/"</span></code></pre></div>
+<p>otherwise you may have:</p>
+<p><code>Mixed Content: The page at ‘&lt;your_gpages_remote_url&gt;’ was loaded over HTTPS, but requested an insecure stylesheet ‘&lt;url_provided_with_http_prefix_while_deploying&gt;/styles.acb808cb000123f5c6ec.css'. This request has been blocked; the content must be served over HTTPS.</code></p>
+<h2 id="angular-cli-deploy">Angular CLI deploy</h2>
+<div><pre class="hljs"><code>npx ngh --dir=dist/DaKar-ngFront  
+or  
+npx angular-cli-ghpages --dir=dist/homeless-front</code></pre></div>
+<p><a title="https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4" href="https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4">https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4</a></p>
+<h2 id="github-pages-config">Github pages config</h2>
+<p><a title="https://github.com/DaKarInternational/DaKar-ngFront/settings" href="https://github.com/DaKarInternational/DaKar-ngFront/settings">https://github.com/DaKarInternational/DaKar-ngFront/settings</a></p>
+<p>in Settings -&gt; Options -&gt; Github Pages :<br />
+put your custom domain such as :  <em>dakar.project.lambla.eu</em><br />
+enforce https.<br />
+done</p>
+<h2 id="github-actions-setup">Github Actions setup</h2>
+<div><pre class="hljs"><code><span class="hljs-bullet">1.</span>  First login to [<span class="hljs-string">https://github.com</span>](<span class="hljs-link">https://github.com</span>)
+<span class="hljs-bullet">2.</span>  Go to [<span class="hljs-string">https://github.com/setting/profile</span>](<span class="hljs-link">https://github.com/setting/profile</span>)
+<span class="hljs-bullet">3.</span>  Now click on to the <span class="hljs-code">`Developer settings`</span>
+<span class="hljs-bullet">4.</span>  Click on <span class="hljs-code">`Personal access tokens`</span> and generate a token
+<span class="hljs-bullet">5.</span> 1.  Go to your repository <span class="hljs-code">`Settings`</span>
+<span class="hljs-bullet">6.</span>  Click on <span class="hljs-code">`Secrets`</span>
+<span class="hljs-bullet">7.</span>  Click on <span class="hljs-code">`Add new secret`</span>
+<span class="hljs-bullet">8.</span>  Put <span class="hljs-code">`ACCESS_TOKEN`</span> for name and <span class="hljs-code">`your github token that you had copy`</span> as value. Now click on <span class="hljs-code">`Add secret`</span> button. A secret with name <span class="hljs-code">`ACCESS_TOKEN`</span> is saved in your repository.
+<span class="hljs-bullet">9.</span> in your repository's <span class="hljs-code">`Action`</span> tab, set up workflow using these code
+
+main.yaml</code></pre></div>
+<div><pre class="hljs"><code><span class="hljs-attr">name:</span> <span class="hljs-string">CI</span>
+
+<span class="hljs-attr">on:</span> [<span class="hljs-string">push</span>]
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">build:</span>
+
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-18.04</span>
+    <span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v1</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-number">8.15</span><span class="hljs-number">.1</span>
+      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v1</span>
+      <span class="hljs-attr">with:</span>
+        <span class="hljs-attr">node-version:</span> <span class="hljs-number">8.15</span><span class="hljs-number">.1</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">and</span> <span class="hljs-string">Deploy</span>
+      <span class="hljs-attr">uses:</span> <span class="hljs-string">JamesIves/github-pages-deploy-action@releases/v2</span>
+      <span class="hljs-attr">env:</span>
+        <span class="hljs-attr">ACCESS_TOKEN:</span> <span class="hljs-string">${{</span> <span class="hljs-string">secrets.ACCESS_TOKEN</span> <span class="hljs-string">}}</span>
+        <span class="hljs-attr">BASE_BRANCH:</span> <span class="hljs-string">develop</span>
+        <span class="hljs-attr">BRANCH:</span> <span class="hljs-string">gh-pages</span>
+        <span class="hljs-attr">FOLDER:</span> <span class="hljs-string">dist/homeless-front</span>
+        <span class="hljs-attr">BUILD_SCRIPT:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-string">ng</span> <span class="hljs-string">build</span> <span class="hljs-string">--</span> <span class="hljs-string">--prod</span> <span class="hljs-string">--base-href</span> <span class="hljs-string">"https://homeless.project.lambla.eu/"</span></code></pre></div>
+<p><a title="https://uxworks.org/how-to-deploy-angular-app-on-github-pages-using-github-actions" href="https://uxworks.org/how-to-deploy-angular-app-on-github-pages-using-github-actions">https://uxworks.org/how-to-deploy-angular-app-on-github-pages-using-github-actions</a></p>
+<h2 id="sources">Sources</h2>
+<p><a title="https://angular.io/guide/deployment" href="https://angular.io/guide/deployment">https://angular.io/guide/deployment</a></p>
+<p><a title="https://dev.to/apdharshi/deploying-your-angular-application-to-github-pages-4laf" href="https://dev.to/apdharshi/deploying-your-angular-application-to-github-pages-4laf">https://dev.to/apdharshi/deploying-your-angular-application-to-github-pages-4laf</a></p>
+<p><a title="https://help.github.com/en/github/working-with-github-pages/securing-your-github-pages-site-with-https" href="https://help.github.com/en/github/working-with-github-pages/securing-your-github-pages-site-with-https">https://help.github.com/en/github/working-with-github-pages/securing-your-github-pages-site-with-https</a></p>
+<p>Other things to explore:</p>
+<p><a title="https://www.codementor.io/@landonpatmore/how-to-setup-a-static-website-using-github-pages-and-cloudflare-with-your-own-domain-name-jb99nbuoe" href="https://www.codementor.io/@landonpatmore/how-to-setup-a-static-website-using-github-pages-and-cloudflare-with-your-own-domain-name-jb99nbuoe">https://www.codementor.io/@landonpatmore/how-to-setup-a-static-website-using-github-pages-and-cloudflare-with-your-own-domain-name-jb99nbuoe</a></p>
+<p><a title="https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc" href="https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc">https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc</a></p>
+</div>
+      </article>
+    </div>
+  </body>
+</html>
